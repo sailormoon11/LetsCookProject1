@@ -11,27 +11,70 @@
     tools:context="com.julia_sk.favorite.Category">
 
     <Button
-        android:text="Мясо"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:id="@+id/category1"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/category2"
-        android:layout_alignEnd="@+id/category2"
-        android:layout_alignLeft="@+id/category2"
-        android:layout_alignStart="@+id/category2" />
+            android:text="Мясо"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="57dp"
+            android:id="@+id/category1"
+            android:layout_alignParentTop="true" android:layout_alignLeft="@+id/category2"
+            android:layout_alignStart="@+id/category2" android:layout_alignRight="@+id/category2"
+            android:layout_alignEnd="@+id/category2"/>
 
     <Button
         android:text="Рыба и морепродукты"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:id="@+id/category2"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp"
-        android:layout_below="@+id/category1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/category1" android:layout_alignLeft="@+id/btnMilk"
+        android:layout_alignStart="@+id/btnMilk"/>
+    <Button
+            android:id="@+id/btnMilk"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Молочные продукты"
+            android:onClick="onSearch"
+            android:layout_below="@+id/category2" android:layout_alignLeft="@+id/btnMacarons"
+            android:layout_alignStart="@+id/btnMacarons">
+    </Button>
+    <Button
+            android:id="@+id/btnMacarons"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Макароны и крупы"
+            android:onClick="onSearch"
+            android:layout_below="@+id/btnMilk" android:layout_alignLeft="@+id/btnSemimanufactures"
+            android:layout_alignStart="@+id/btnSemimanufactures">
+    </Button>
+    <Button
+            android:id="@+id/btnFruits"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Овощи и фрукты"
+            android:onClick="onSearch"
+            android:layout_below="@+id/btnSemimanufactures" android:layout_alignLeft="@+id/btnOther"
+            android:layout_alignStart="@+id/btnOther">
+    </Button>
+    <Button
+            android:id="@+id/btnSemimanufactures"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Полуфабрикаты"
+            android:onClick="onSearch"
+            android:layout_below="@+id/btnMacarons" android:layout_alignLeft="@+id/btnFruits"
+            android:layout_alignStart="@+id/btnFruits">
+    </Button>
+    <Button
+            android:id="@+id/btnOther"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Прочее"
+            android:onClick="onSearch"
+            android:layout_below="@+id/btnFruits" android:layout_centerHorizontal="true">
+    </Button>
 
 </RelativeLayout>

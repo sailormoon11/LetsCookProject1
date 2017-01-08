@@ -22,13 +22,6 @@ public class Main2Activity extends Activity {
 
         lessonListView = (ListView) findViewById(R.id.recipeList);
 
-       // recipeList = new ArrayList<Recipe>();
-
-
-//        for (int i = 1; i < 11; i++) {
-//            recipeList.add(new Recipe("Урок " + i, "Текст урока номер " + i+ ". В этом уроке мы научимся ..."));
-//        }
-
         appListAdapter = new RecipeListAdapter(this, lessonsList);
         lessonListView.setAdapter(appListAdapter);
 

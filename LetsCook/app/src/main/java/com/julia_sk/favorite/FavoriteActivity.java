@@ -16,7 +16,7 @@ public class FavoriteActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
-        setContentView(R.layout.activity_favorite);
+       // setContentView(R.layout.activity_favorite);
         DB.setFavoritrList2();
         ListView lFavorite = (ListView) findViewById(R.id.lfavorite);
 

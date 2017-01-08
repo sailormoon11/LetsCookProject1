@@ -1,5 +1,8 @@
 package com.julia_sk.favorite;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -7,57 +10,39 @@ import java.util.ArrayList;
  */
 
 public class DB {
-    public ArrayList<Recipe> recipeList;
-    public ArrayList<Recipe> recipeList2;
-    public ArrayList<Recipe> allRecipes;
-    //public static Vector<Integer> favoriteList;
+    public static ArrayList<Recipe> recipeList; //мясо
+    public static ArrayList<Recipe> recipeList2; //рыбв и морепродукты
+    public static ArrayList<Recipe> allResipes;
+    public static ArrayList<Recipe> searchList;
+    public static ArrayList<Recipe> milk;
+    public static ArrayList<Recipe> Macarons;
+    public static ArrayList<Recipe> Semimanufactures;
+    public static ArrayList<Recipe> Fruits;
+    public static ArrayList<Recipe> Other;
     public static ArrayList<Recipe> favoriteList;
     public static String[] favoriteString;
-
-
     public DB() {
-        recipeList = new ArrayList<Recipe>();
-        recipeList2 = new ArrayList<Recipe>();
-        allRecipes = new ArrayList<>();
-
-        for (int i = 1; i < 11; i++) {
-            recipeList.add(new Recipe("Рецепт " + i, "Текст рецепта про мясо ..." ));
-            recipeList.get(i-1).setId(i);
-        }
-        for (int i = 1; i < 11; i++) {
-            recipeList2.add(new Recipe("Рецепт " + (i+11), "Текст рецепта пор морепродукты ... " ));
-            recipeList2.get(i-1).setId(i+11);
-        }
-        allRecipes.addAll(recipeList);
-        allRecipes.addAll(recipeList2);
     }
 
-//    public static void save(int position) {
-//        if (favoriteList == null) {
-//            favoriteList = new Vector<Integer>();
-//        }
-//
-//        if (!favoriteList.contains(position))
-//            favoriteList.add(position); }
-//
-//    public static void delete(int position) { favoriteList.remove((Object)position); }
-//
-//    public static String getFavoritrList() { return favoriteList.toString(); }
-//
-//    public ArrayList<Recipe> createFavoriteList() {
-//        favorite = new ArrayList<Recipe>();
-//        for (int i = 0; i < favoriteList.size(); i++) {
-//            for (int j =0; j<recipeList.size(); j++) {
-//                if (recipeList.get(j).getId()==favorite.get(i))
-//            }
-//            if (favoriteList.get(i)<11)
-//                favorite.add(recipeList.get(favoriteList.get(i)));
-//            else
-//                favorite.add(recipeList2.get(favoriteList.get(i)));
-//        }
-//        return favorite;
-//    }
-
+public static void setList(Cursor cursor, ArrayList<Recipe> list)
+{
+    if (cursor.moveToFirst()) {
+        int idIndex = cursor.getColumnIndex(DB1.KEY_ID);
+        int nameIndex = cursor.getColumnIndex(DB1.KEY_TITLE);
+        int textIndex = cursor.getColumnIndex(DB1.KEY_RECIPETEXT);
+        int complexityIndex = cursor.getColumnIndex(DB1.KEY_COMPLEXITY);
+        int timeIndex = cursor.getColumnIndex(DB1.KEY_COOKINGTIMEMIN);
+        int productsIndex = cursor.getColumnIndex(DB1.KEY_PRODUCTS);
+        do {
+            list.add(new Recipe("Рецепт " + cursor.getInt(idIndex) + " " + cursor.getString(nameIndex) ,
+                    "\nПродукты: " + cursor.getString(productsIndex)
+                    + "\n" + cursor.getString(complexityIndex)
+                    + "\nВремя: " + cursor.getString(timeIndex) + "\n" + cursor.getString(textIndex)));
+            list.get(cursor.getPosition()).setId(cursor.getInt(idIndex));
+            Log.d("mLog", "ID = " + cursor.getPosition());
+        } while (cursor.moveToNext());
+    }
+}
     public static void save(Recipe recipe) {
         Boolean contain = false;
         if (favoriteList == null) {
@@ -82,10 +67,18 @@ public class DB {
         return s; }
 
     public static void setFavoritrList2() {
-        favoriteString = new String[favoriteList.size()];
-        for (int i =0; i<favoriteList.size();i++)
-            favoriteString[i] = favoriteList.get(i).getTitle();
-         }
+        if (favoriteList==null) {
+            favoriteString = new String[1];
+            favoriteString[0] = "Список пуст";
+        }
+        else {
+            favoriteString = new String[favoriteList.size()];
+            for (int i =0; i<favoriteList.size();i++)
+                favoriteString[i] = favoriteList.get(i).getTitle();
+            }
+        }
+
+
 
 
 }

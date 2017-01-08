@@ -12,14 +12,30 @@ public class Category extends Activity implements View.OnClickListener{
     DB db = new DB();
     Button category1;
     Button category2;
+    Button milk;
+    Button fruit;
+    Button macarons;
+    Button semimanufactures;
+    Button other;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         category1 = (Button) findViewById(R.id.category1);
         category2 = (Button) findViewById(R.id.category2);
+        milk = (Button) findViewById(R.id.btnMilk);
+        fruit = (Button) findViewById(R.id.btnFruits);
+        macarons = (Button) findViewById(R.id.btnMacarons);
+        semimanufactures = (Button) findViewById(R.id.btnSemimanufactures);
+        other = (Button) findViewById(R.id.btnOther);
         category1.setOnClickListener(this);
         category2.setOnClickListener(this);
+        milk.setOnClickListener(this);
+        fruit.setOnClickListener(this);
+        macarons.setOnClickListener(this);
+        semimanufactures.setOnClickListener(this);
+        other.setOnClickListener(this);
 //        db.recipeList = new ArrayList<Recipe>();
 //        db.recipeList2 = new ArrayList<Recipe>();
 
@@ -46,7 +62,31 @@ public class Category extends Activity implements View.OnClickListener{
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.btnMilk:
+                Main2Activity.setLessonsList(db.milk);
+                intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnFruits:
+                Main2Activity.setLessonsList(db.Fruits);
+                intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnMacarons:
+                Main2Activity.setLessonsList(db.Macarons);
+                intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnOther:
+                Main2Activity.setLessonsList(db.Other);
+                intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnSemimanufactures:
+                Main2Activity.setLessonsList(db.Semimanufactures);
+                intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
+                break;
         }
     }
 }

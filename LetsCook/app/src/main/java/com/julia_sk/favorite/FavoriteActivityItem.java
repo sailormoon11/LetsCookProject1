@@ -17,7 +17,7 @@ public class FavoriteActivityItem extends Activity {
             position = getIntent().getIntExtra("position", -1);
         }
         TextView textView = (TextView) findViewById(R.id.favoriteView);
-        if (!DB.favoriteList.isEmpty()) {
+        if (!(DB.favoriteList == null)) {
             recipe = DB.favoriteList.get(position);
             textView.setText(recipe.getText());
         }

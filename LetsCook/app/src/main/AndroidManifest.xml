@@ -38,6 +38,7 @@
         <activity android:name=".Category" />
         <activity android:name=".FavoriteActivity" />
         <activity android:name=".FavoriteActivityItem"></activity>
+        <activity android:name=".Activity_Products"></activity>
     </application>
 
 </manifest>

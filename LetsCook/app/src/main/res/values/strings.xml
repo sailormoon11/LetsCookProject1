@@ -5,6 +5,19 @@
     <string name="hello_world">Hello world!</string>
     <string name="favorite">Избранное</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="btnOk">Готово</string>
+    <string-array name="arrayProducts">
+        <item>мясо</item>
+        <item>картошка</item>
+        <item>бичпакет</item>
+        <item>макароны</item>
+        <item>сыр</item>
+        <item>томатная паста</item>
+        <item>капуста</item>
+        <item>яйцо</item>
+        <item>молоко</item>
+
+    </string-array>
 
 </resources>
 

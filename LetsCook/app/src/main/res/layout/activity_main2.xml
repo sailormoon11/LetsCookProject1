@@ -32,10 +32,10 @@
         android:layout_alignEnd="@+id/category" />
 
     <Button
-        android:text="Мои запасы"
+        android:text="Поиск по моим продуктам"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/search"
         android:layout_below="@+id/favorite"
         android:layout_alignLeft="@+id/favorite"
         android:layout_alignStart="@+id/favorite"
@@ -48,12 +48,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/random"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/search"
+        android:layout_alignLeft="@+id/search"
+        android:layout_alignStart="@+id/search"
         android:layout_marginTop="16dp"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2" />
+        android:layout_alignRight="@+id/search"
+        android:layout_alignEnd="@+id/search" />
 
     <Button
         android:text="Поиск по ингредиентам"
