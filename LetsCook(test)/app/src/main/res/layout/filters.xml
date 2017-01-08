@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:text=" Макароны по-флотски \n
+Ингредиенты: \n
+     ● мясной фарш 500 г \n
+     ● макароны 400 г \n
+     ● репчатый лук 1 шт. \n
+     ● растительное масло по вкусу \n
+     ● соль, перец по вкусу \n
+Приготовление:\n
+Отварить макароны до готовности в подсоленной воде.
+Мелко нарезать лук. Разогреть сковороду с растительным маслом, выложить мясной фарш.
+Если говядина жесткая, можно добавить немного кипящей воды. Когда мясо начнет подрумяниваться,
+добавить нарезанный лук. Посолить и поперчить. Тушить до мягкости лука.Добавить макароны, хорошо перемешать.
+За минуту до готовности добавить нарезанную петрушку. Макароны по-флотски готовы!"
+                android:layout_width="match_parent"
+                android:id="@+id/textView3"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/textView4" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/textView5" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/textView6" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
