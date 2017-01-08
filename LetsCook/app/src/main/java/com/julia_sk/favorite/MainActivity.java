@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         search.setOnClickListener(this);
         DB.recipeList = new ArrayList<Recipe>();
         DB.recipeList2 = new ArrayList<Recipe>();
-        DB.allResipes = new ArrayList<Recipe>();
+        DB.allRecipes = new ArrayList<Recipe>();
         DB.Macarons = new ArrayList<Recipe>();
         DB.Fruits = new ArrayList<Recipe>();
         DB.milk = new ArrayList<Recipe>();
@@ -55,16 +55,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //cursor = db1.getFilter(filter);
         cursor = db1.getAllData();
-        DB.setList(cursor,DB.allResipes);
+        DB.setList(cursor,DB.allRecipes);
         cursor = db1.getORFilter(new String[]{"мясо"});
         DB.setList(cursor,DB.recipeList);
         cursor = db1.getORFilter(new String[] {"рыба"});
         DB.setList(cursor,DB.recipeList2);
-        cursor = db1.getORFilter(new String[] {"капуста","картошкка"});
+        cursor = db1.getORFilter(new String[] {"капуста","картошкка", "помидор", "огурец"});
         DB.setList(cursor,DB.Fruits);
         cursor = db1.getORFilter(new String[] {"макароны"});
         DB.setList(cursor,DB.Macarons);
-        cursor = db1.getORFilter(new String[] {"молоко","cыр"});
+        cursor = db1.getORFilter(new String[] {"молоко","cыр", "сметана"});
         DB.setList(cursor,DB.milk);
         cursor = db1.getORFilter(new String[] {"яйцо","томатная паста"});
         DB.setList(cursor,DB.Other);
@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.button:
 
-                Main2Activity.setLessonsList(db.allResipes);
+                Main2Activity.setLessonsList(db.allRecipes);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
@@ -96,7 +96,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.random:
                 ArrayList<Recipe> rand= new ArrayList<Recipe>();
-                rand.add(db.allResipes.get(new Random().nextInt(db.allResipes.size())));
+                rand.add(db.allRecipes.get(new Random().nextInt(db.allRecipes.size())));
                 Main2Activity.setLessonsList(rand);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);

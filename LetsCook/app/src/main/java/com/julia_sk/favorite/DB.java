@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DB {
     public static ArrayList<Recipe> recipeList; //мясо
     public static ArrayList<Recipe> recipeList2; //рыбв и морепродукты
-    public static ArrayList<Recipe> allResipes;
+    public static ArrayList<Recipe> allRecipes;
     public static ArrayList<Recipe> searchList;
     public static ArrayList<Recipe> milk;
     public static ArrayList<Recipe> Macarons;

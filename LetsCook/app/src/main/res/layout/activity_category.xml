@@ -8,25 +8,34 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.julia_sk.favorite.Category">
+    tools:context="com.julia_sk.favorite.Category"
+                android:background="@drawable/crystal">
 
+    <ImageView
+            android:layout_height="120dp"
+            android:layout_width="120dp"
+            android:src="@drawable/st"
+            android:id="@+id/imageView"
+            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
     <Button
             android:text="Мясо"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="29dp"
             android:id="@+id/category1"
-            android:layout_alignParentTop="true" android:layout_alignLeft="@+id/category2"
-            android:layout_alignStart="@+id/category2" android:layout_alignRight="@+id/category2"
-            android:layout_alignEnd="@+id/category2"/>
+            android:layout_below="@+id/imageView" android:layout_alignLeft="@+id/category2"
+            android:layout_alignStart="@+id/category2" android:layout_alignRight="@+id/btnMilk"
+            android:layout_alignEnd="@+id/btnMilk"/>
 
     <Button
-        android:text="Рыба и морепродукты"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/category2"
-        android:layout_below="@+id/category1" android:layout_alignLeft="@+id/btnMilk"
-        android:layout_alignStart="@+id/btnMilk"/>
+            android:text="Рыба и морепродукты"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/category2"
+            android:layout_below="@+id/category1" android:layout_alignLeft="@+id/btnMilk"
+            android:layout_alignStart="@+id/btnMilk" android:layout_alignRight="@+id/btnMilk"
+            android:layout_alignEnd="@+id/btnMilk"/>
     <Button
             android:id="@+id/btnMilk"
             android:layout_width="200dp"

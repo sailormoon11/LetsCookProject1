@@ -121,8 +121,29 @@ public class DB1 {
             products = "картошка, мясо, капуста";
             addRec(db, cv, title, recipe, complexity, time, products);
 
+            title = "Жареная рыбы";
+            recipe = "Жарить рыбу, пока не приготовится";
+            complexity = "Сложность: 4/10";
+            time = "20 минут";
+            products = "рыба";
+            addRec(db, cv, title, recipe, complexity, time, products);
+
+            title = "Макароны по-флотски";
+            recipe = "Сварить макароны, пожарить фарш с томатной пастой, все смешать";
+            complexity = "Сложность: 6/10";
+            time = "30 минут";
+            products = "макароны, мясо, томатная паста";
+            addRec(db, cv, title, recipe, complexity, time, products);
+
+            title = "Голубцы";
+            recipe = "Завернуть фарш в капусту, жарить до готовности";
+            complexity = "Сложность: 8/10";
+            time = "40 минут";
+            products = "мясо, капуста";
+            addRec(db, cv, title, recipe, complexity, time, products);
+
             title = "Паста";
-            recipe = "Сварить макароны, сделать соус, смешать";
+            recipe = "Сварить макароны, сделать соус из томатной пасты и сыра, смешать соус с макаронами";
             complexity = "Сложность: 5/10";
             time = "35 минут";
             products = "макароны, томатная паста, сыр";
@@ -143,11 +164,20 @@ public class DB1 {
             addRec(db, cv, title, recipe, complexity, time, products);
 
             title = "Омлет";
-            recipe = "Пожарить яйца с молоком";
+            recipe = "Взбить яйца с молоком, пожарить на сковороде";
             complexity = "Сложность: 2/10";
             time = "5 минут";
             products = "яйцо, молоко";
             addRec(db, cv, title, recipe, complexity, time, products);
+
+            title = "Салат летний";
+            recipe = "Нарезать помидоры, огурцы, смешать все со сметаной";
+            complexity = "Сложность: 2/10";
+            time = "5 минут";
+            products = "помидор, огурец, сметана";
+            addRec(db, cv, title, recipe, complexity, time, products);
+
+
         }
 
         @Override

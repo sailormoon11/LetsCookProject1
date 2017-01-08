@@ -8,8 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.julia_sk.favorite.Main2Activity">
-
+    tools:context="com.julia_sk.favorite.Main2Activity"
+   android:background="@drawable/crystal">
+    <ImageView
+            android:layout_height="120dp"
+            android:layout_width="120dp"
+            android:src="@drawable/st"
+            android:id="@+id/imageView" android:layout_below="@+id/version" android:layout_centerHorizontal="true"/>
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
@@ -20,60 +25,47 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Избранные рецепты"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/favorite"
-        android:layout_below="@+id/category"
-        android:layout_alignLeft="@+id/category"
-        android:layout_alignStart="@+id/category"
-        android:layout_marginTop="17dp"
-        android:layout_alignRight="@+id/category"
-        android:layout_alignEnd="@+id/category" />
+            android:text="Избранные рецепты"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/favorite"
+            android:layout_below="@+id/category" android:layout_alignLeft="@+id/category"
+            android:layout_alignStart="@+id/category" android:layout_alignRight="@+id/category"
+            android:layout_alignEnd="@+id/category"/>
 
     <Button
-        android:text="Поиск по моим продуктам"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/search"
-        android:layout_below="@+id/favorite"
-        android:layout_alignLeft="@+id/favorite"
-        android:layout_alignStart="@+id/favorite"
-        android:layout_marginTop="15dp"
-        android:layout_alignRight="@+id/favorite"
-        android:layout_alignEnd="@+id/favorite" />
+            android:text="Поиск по моим продуктам"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/search"
+            android:layout_below="@+id/favorite" android:layout_alignLeft="@+id/favorite"
+            android:layout_alignStart="@+id/favorite" android:layout_alignRight="@+id/favorite"
+            android:layout_alignEnd="@+id/favorite"/>
 
     <Button
-        android:text="Случайный рецепт"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/random"
-        android:layout_below="@+id/search"
-        android:layout_alignLeft="@+id/search"
-        android:layout_alignStart="@+id/search"
-        android:layout_marginTop="16dp"
-        android:layout_alignRight="@+id/search"
-        android:layout_alignEnd="@+id/search" />
+            android:text="Случайный рецепт"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/random"
+            android:layout_below="@+id/search" android:layout_alignLeft="@+id/search"
+            android:layout_alignStart="@+id/search" android:layout_alignRight="@+id/search"
+            android:layout_alignEnd="@+id/search"/>
 
     <Button
         android:text="Поиск по ингредиентам"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/category"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/button" android:layout_centerHorizontal="true"/>
 
     <Button
-        android:text="Все рецепты"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
-        android:id="@+id/button"
-        android:layout_below="@+id/version"
-        android:layout_alignLeft="@+id/category"
-        android:layout_alignStart="@+id/category"
-        android:layout_alignRight="@+id/category"
-        android:layout_alignEnd="@+id/category" />
+            android:text="Все рецепты"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:layout_marginTop="37dp"
+            android:layout_below="@+id/imageView" android:layout_alignRight="@+id/category"
+            android:layout_alignEnd="@+id/category" android:layout_alignLeft="@+id/category"
+            android:layout_alignStart="@+id/category"/>
 
 </RelativeLayout>

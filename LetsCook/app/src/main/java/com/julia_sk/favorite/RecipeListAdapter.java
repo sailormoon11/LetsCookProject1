@@ -59,7 +59,7 @@ public class RecipeListAdapter extends BaseAdapter
         if (v == null){
             viewHolder = new ViewHolder();
             view = inflater.inflate(R.layout.recipe_item, parent, false);
-            viewHolder.tvLessonName = (TextView) view.findViewById(R.id.tvResipeItem);
+            viewHolder.tvLessonName = (TextView) view.findViewById(R.id.tvRecipeItem);
             viewHolder.chbFaforiteLesson = (CheckBox) view.findViewById(R.id.chbFavoriteRecipe);
             viewHolder.tvLessonName.setOnClickListener(onClick);
             viewHolder.chbFaforiteLesson.setOnClickListener(onClick);
@@ -102,7 +102,7 @@ public class RecipeListAdapter extends BaseAdapter
         @Override
         public void onClick(View view){
             switch(view.getId()){
-                case R.id.tvResipeItem:
+                case R.id.tvRecipeItem:
                     Intent intent = new Intent(context, RecipeActivity.class);
                     intent.putExtra("position", (Integer) view.getTag());
                     context.startActivity(intent);
