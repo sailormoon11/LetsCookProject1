@@ -121,7 +121,7 @@ public class DB1 {
             products = "картошка, мясо, капуста";
             addRec(db, cv, title, recipe, complexity, time, products);
 
-            title = "Жареная рыбы";
+            title = "Жареная рыба";
             recipe = "Жарить рыбу, пока не приготовится";
             complexity = "Сложность: 4/10";
             time = "20 минут";
