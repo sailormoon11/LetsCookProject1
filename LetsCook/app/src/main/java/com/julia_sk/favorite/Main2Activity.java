@@ -5,25 +5,29 @@ package com.julia_sk.favorite;
         import java.util.ArrayList;
         import android.app.Activity;
         import android.widget.ListView;
+        import android.widget.TextView;
 
 public class Main2Activity extends Activity {
 
-    private ListView lessonListView;
+    private ListView recipeListView;
     private RecipeListAdapter appListAdapter;
-    public static ArrayList<Recipe> lessonsList;
-    public static void setLessonsList(ArrayList<Recipe> lessonsList1) {
-        lessonsList = lessonsList1;
+    public static ArrayList<Recipe> recipeList;
+    public static void setRecipeList(ArrayList<Recipe> recipeList1) {
+        recipeList = recipeList1;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        if (recipeList==null || recipeList.isEmpty()) {
+            TextView textView1 = (TextView) findViewById(R.id.notFavorite);
+            textView1.setText("Список пуст");
+        }
+        recipeListView = (ListView) findViewById(R.id.recipeList);
 
-        lessonListView = (ListView) findViewById(R.id.recipeList);
-
-        appListAdapter = new RecipeListAdapter(this, lessonsList);
-        lessonListView.setAdapter(appListAdapter);
+        appListAdapter = new RecipeListAdapter(this, recipeList);
+        recipeListView.setAdapter(appListAdapter);
 
     }
 

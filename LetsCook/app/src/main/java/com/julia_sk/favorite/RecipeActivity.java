@@ -24,7 +24,7 @@ public class RecipeActivity extends Activity{
         if (getIntent() != null) {
             position = getIntent().getIntExtra("position", -1);
         }
-        recipe = Main2Activity.lessonsList.get(position);
+        recipe = Main2Activity.recipeList.get(position);
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(recipe.getText());
 
@@ -47,7 +47,7 @@ public class RecipeActivity extends Activity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.lesson, menu);
+        getMenuInflater().inflate(R.menu.recipe, menu);
         return true;
     }
 

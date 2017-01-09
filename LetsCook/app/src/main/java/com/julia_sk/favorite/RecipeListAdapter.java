@@ -22,26 +22,26 @@ public class RecipeListAdapter extends BaseAdapter
 {
     //public static Vector<Integer> favoriteList;
     private Context context;
-    private ArrayList<Recipe> lessonsList;
+    private ArrayList<Recipe> recipeList;
     private LayoutInflater inflater;
 
-    public RecipeListAdapter(Context context, ArrayList<Recipe> lessonsList)
+    public RecipeListAdapter(Context context, ArrayList<Recipe> recipeList)
     {
         this.context = context;
-        this.lessonsList = lessonsList;
+        this.recipeList = (ArrayList<Recipe>)recipeList.clone();
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount()
     {
-        return lessonsList.size();
+        return recipeList.size();
     }
 
     @Override
     public Recipe getItem(int position)
     {
-        return lessonsList.get(position);
+        return recipeList.get(position);
     }
 
     @Override
@@ -59,9 +59,9 @@ public class RecipeListAdapter extends BaseAdapter
         if (v == null){
             viewHolder = new ViewHolder();
             view = inflater.inflate(R.layout.recipe_item, parent, false);
-            viewHolder.tvLessonName = (TextView) view.findViewById(R.id.tvRecipeItem);
+            viewHolder.tvRecipeName = (TextView) view.findViewById(R.id.tvRecipeItem);
             viewHolder.chbFaforiteLesson = (CheckBox) view.findViewById(R.id.chbFavoriteRecipe);
-            viewHolder.tvLessonName.setOnClickListener(onClick);
+            viewHolder.tvRecipeName.setOnClickListener(onClick);
             viewHolder.chbFaforiteLesson.setOnClickListener(onClick);
 
             view.setTag(viewHolder);
@@ -69,19 +69,19 @@ public class RecipeListAdapter extends BaseAdapter
             view = v;
             viewHolder = (ViewHolder) view.getTag();
         }
-        Recipe recipe = lessonsList.get(position);
+        Recipe recipe = recipeList.get(position);
 
-        viewHolder.tvLessonName.setTag(position);
+        viewHolder.tvRecipeName.setTag(position);
         viewHolder.chbFaforiteLesson.setTag(position);
 
-        viewHolder.tvLessonName.setText(recipe.getTitle());
+        viewHolder.tvRecipeName.setText(recipe.getTitle());
         viewHolder.chbFaforiteLesson.setChecked(recipe.isFavorite());
 
         return view;
     }
 
     static class ViewHolder {
-        private TextView tvLessonName;
+        private TextView tvRecipeName;
         private CheckBox chbFaforiteLesson;
     }
 
@@ -109,14 +109,16 @@ public class RecipeListAdapter extends BaseAdapter
                     break;
 
                 case R.id.chbFavoriteRecipe:
-                    lessonsList.get((Integer) view.getTag()).setFavorite(((CheckBox) view).isChecked());
+                    recipeList.get((Integer) view.getTag()).setFavorite(((CheckBox) view).isChecked());
                     if (((CheckBox) view).isChecked()) {
-                        DB.save(lessonsList.get((Integer) view.getTag()));
+                        DB.save(recipeList.get((Integer) view.getTag()));
                     }
                     else {
-                        DB.delete(lessonsList.get((Integer) view.getTag()));
-                    }
+                        //recipeList.get((Integer) view.getTag());
+                        DB.delete(recipeList.get((Integer) view.getTag()));
 
+                    }
+                    Log.d("sd",recipeList.get((Integer) view.getTag()).getTitle());
                     Log.d("sd",DB.getFavoritrList());
                     break;
             }

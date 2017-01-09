@@ -1,5 +1,5 @@
-package com.julia_sk.favorite;
-// Version: "v0.1-0-gad4e2c7" 
+package com.julia_sk.favorite; 
+// Version: "v0.4-2-gdca010c"
 public class Version { 
-    public static final String version = "v0.3-0-gad4e2c7";
+    public static final String version = "v0.3-2-gdca010c"; 
 } 

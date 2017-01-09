@@ -53,37 +53,37 @@ public class Category extends Activity implements View.OnClickListener{
         Intent intent;
         switch (v.getId()) {
             case R.id.category1:
-                Main2Activity.setLessonsList(db.recipeList);
+                Main2Activity.setRecipeList(db.recipeList);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.category2:
-                Main2Activity.setLessonsList(db.recipeList2);
+                Main2Activity.setRecipeList(db.recipeList2);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.btnMilk:
-                Main2Activity.setLessonsList(db.milk);
+                Main2Activity.setRecipeList(db.milk);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.btnFruits:
-                Main2Activity.setLessonsList(db.Fruits);
+                Main2Activity.setRecipeList(db.Fruits);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.btnMacarons:
-                Main2Activity.setLessonsList(db.Macarons);
+                Main2Activity.setRecipeList(db.Macarons);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.btnOther:
-                Main2Activity.setLessonsList(db.Other);
+                Main2Activity.setRecipeList(db.Other);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.btnSemimanufactures:
-                Main2Activity.setLessonsList(db.Semimanufactures);
+                Main2Activity.setRecipeList(db.Semimanufactures);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;

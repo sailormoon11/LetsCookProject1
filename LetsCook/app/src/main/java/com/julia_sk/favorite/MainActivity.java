@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.button:
 
-                Main2Activity.setLessonsList(db.allRecipes);
+                Main2Activity.setRecipeList(db.allRecipes);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;
@@ -90,14 +90,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.favorite:
-                //Main2Activity.setLessonsList(db.favoriteList);
-                intent = new Intent(this,FavoriteActivity.class);
+                if (db.favoriteList==null) {
+                    //TextView textView1 = (TextView) findViewById(R.id.notFavorite);
+                   // textView1.setText("Список пуст");
+                    db.favoriteList = new ArrayList<Recipe>();
+                }
+                Main2Activity.setRecipeList(db.favoriteList);
+                intent = new Intent(this,Main2Activity.class);
+                //intent = new Intent(this,FavoriteActivity.class);
                 startActivity(intent);
                 break;
             case R.id.random:
                 ArrayList<Recipe> rand= new ArrayList<Recipe>();
                 rand.add(db.allRecipes.get(new Random().nextInt(db.allRecipes.size())));
-                Main2Activity.setLessonsList(rand);
+                Main2Activity.setRecipeList(rand);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
                 break;

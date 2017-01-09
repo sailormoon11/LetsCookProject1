@@ -14,7 +14,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/st"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar">>
         <activity
@@ -37,8 +37,6 @@
         </activity>
         <activity android:name=".Main2Activity" />
         <activity android:name=".Category" />
-        <activity android:name=".FavoriteActivity" />
-        <activity android:name=".FavoriteActivityItem"></activity>
         <activity android:name=".Activity_Products"></activity>
     </application>
 

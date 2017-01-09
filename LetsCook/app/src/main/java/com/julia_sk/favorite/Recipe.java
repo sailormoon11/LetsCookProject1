@@ -44,6 +44,13 @@ public class Recipe {
     }
 
     public boolean isFavorite() {
+        boolean flag = false;
+        if (DB.favoriteList != null)
+            for (int i =0; i<DB.favoriteList.size();i++) {
+                if (DB.favoriteList.get(i).getId()== id )
+                    flag = true;
+            }
+            setFavorite(flag);
         return favorite;
     }
 

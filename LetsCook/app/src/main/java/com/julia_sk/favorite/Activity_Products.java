@@ -76,16 +76,19 @@ public class Activity_Products extends Activity implements OnClickListener {
         Intent intent;
         switch (arg0.getId()) {
             case R.id.btnOk:
+                if (alProducts!=null && !alProducts.isEmpty()) {
                 filter = new String[alProducts.size()];
                 for (int i = 0; i < alProducts.size(); i++) {
                         filter[i]=(alProducts.get(i));
-                }
+                } }
+                else {
+                    filter = new String[1]; filter[0] = "not"; }
                 db1.open();
                 cursor = db1.getANDFilter(filter);
                 DB.setList(cursor,DB.searchList);
                 cursor.close();
 
-                Main2Activity.setLessonsList(DB.searchList);
+                Main2Activity.setRecipeList(DB.searchList);
                 intent = new Intent(this, Main2Activity.class);
                 startActivity(intent);
                 break;

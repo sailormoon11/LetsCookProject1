@@ -2,9 +2,7 @@
 <resources>
 
     <string name="app_name">LetsCook</string>
-    <string name="hello_world">Hello world!</string>
     <string name="favorite">Избранное</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="btnOk">Готово</string>
     <string-array name="arrayProducts">
         <item>мясо</item>

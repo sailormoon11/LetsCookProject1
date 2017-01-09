@@ -20,7 +20,7 @@ public class DB {
     public static ArrayList<Recipe> Fruits;
     public static ArrayList<Recipe> Other;
     public static ArrayList<Recipe> favoriteList;
-    public static String[] favoriteString;
+    public static String[] favoriteString ;
     public DB() {
     }
 
@@ -58,7 +58,11 @@ public static void setList(Cursor cursor, ArrayList<Recipe> list)
             favoriteList.add(recipe);
     }
 
-    public static void delete(Recipe recipe) { favoriteList.remove(recipe); }
+    public static void delete(Recipe recipe) {
+        for (int i =0; i<favoriteList.size();i++)
+            if (favoriteList.get(i).getId() == recipe.getId())
+                favoriteList.remove(i); }
+        //favoriteList.remove(recipe); }
 
     public static String getFavoritrList() {
         String s="";
