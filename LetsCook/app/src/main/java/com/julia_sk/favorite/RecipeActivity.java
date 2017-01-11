@@ -17,6 +17,7 @@ public class RecipeActivity extends Activity{
     private Recipe recipe;
     private int position = 0;
     final int MENU_FAVORITE = 1;
+    final int MENU_FAVORITE_DEL = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,10 @@ public class RecipeActivity extends Activity{
                                     ContextMenu.ContextMenuInfo menuInfo) {
         switch (v.getId()) {
             case R.id.textView:
-                menu.add(0, MENU_FAVORITE, 0, "Добавить в изобранное");
+                if (!recipe.isFavorite())
+                    menu.add(0, MENU_FAVORITE, 0, "Добавить в изобранное");
+                else
+                    menu.add(1, MENU_FAVORITE_DEL, 1, "Удалить из избранного");
 
                 break;
         }
@@ -84,6 +88,9 @@ public class RecipeActivity extends Activity{
         switch (item.getItemId()) {
             case MENU_FAVORITE:
                 DB.save(recipe);
+                break;
+            case MENU_FAVORITE_DEL:
+                DB.delete(recipe);
                 break;
         }
         return super.onContextItemSelected(item);
