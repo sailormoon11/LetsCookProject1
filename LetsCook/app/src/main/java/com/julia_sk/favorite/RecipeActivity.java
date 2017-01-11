@@ -2,11 +2,9 @@ package com.julia_sk.favorite;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Юлия on 05.12.2016.
@@ -61,10 +59,22 @@ public class RecipeActivity extends Activity{
         switch (item.getItemId()) {
             case R.id.menu_item_no_favorite:
                 setFavorite(true);
+                DB.save(recipe);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Рецепт добавлен в избранное",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
                 return true;
 
             case R.id.menu_item_is_favorite:
                 setFavorite(false);
+                DB.delete(recipe);
+                Toast toast2 = Toast.makeText(getApplicationContext(),
+                        "Рецепт удален из избранного",
+                        Toast.LENGTH_SHORT);
+                toast2.setGravity(Gravity.CENTER, 0, 0);
+                toast2.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
