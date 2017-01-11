@@ -1,20 +1,22 @@
 package com.julia_sk.favorite;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by Юлия on 05.12.2016.
  */
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
-
 public class RecipeActivity extends Activity{
 
     private Recipe recipe;
     private int position = 0;
+    final int MENU_FAVORITE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class RecipeActivity extends Activity{
         recipe = Main2Activity.recipeList.get(position);
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(recipe.getText());
+        registerForContextMenu(textView);
 
     }
 
@@ -62,12 +65,29 @@ public class RecipeActivity extends Activity{
             case R.id.menu_item_is_favorite:
                 setFavorite(false);
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        switch (v.getId()) {
+            case R.id.textView:
+                menu.add(0, MENU_FAVORITE, 0, "Добавить в изобранное");
 
+                break;
+        }
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_FAVORITE:
+                DB.save(recipe);
+                break;
+        }
+        return super.onContextItemSelected(item);
+    }
     void setFavorite(boolean isFavorite) {
         recipe.setFavorite(isFavorite);
         invalidateOptionsMenu();

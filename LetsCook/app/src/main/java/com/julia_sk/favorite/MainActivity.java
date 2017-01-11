@@ -55,21 +55,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //cursor = db1.getFilter(filter);
         cursor = db1.getAllData();
-        DB.setList(cursor,DB.allRecipes);
+        DB.setList(cursor, DB.allRecipes);
         cursor = db1.getORFilter(new String[]{"мясо"});
-        DB.setList(cursor,DB.recipeList);
+        DB.setList(cursor, DB.recipeList);
         cursor = db1.getORFilter(new String[] {"рыба"});
-        DB.setList(cursor,DB.recipeList2);
+        DB.setList(cursor, DB.recipeList2);
         cursor = db1.getORFilter(new String[] {"капуста","картошкка", "помидор", "огурец"});
-        DB.setList(cursor,DB.Fruits);
+        DB.setList(cursor, DB.Fruits);
         cursor = db1.getORFilter(new String[] {"макароны"});
-        DB.setList(cursor,DB.Macarons);
+        DB.setList(cursor, DB.Macarons);
         cursor = db1.getORFilter(new String[] {"молоко","cыр", "сметана"});
-        DB.setList(cursor,DB.milk);
+        DB.setList(cursor, DB.milk);
         cursor = db1.getORFilter(new String[] {"яйцо","томатная паста"});
-        DB.setList(cursor,DB.Other);
+        DB.setList(cursor, DB.Other);
         cursor = db1.getORFilter(new String[] {"бичпакет"});
-        DB.setList(cursor,DB.Semimanufactures);
+        DB.setList(cursor, DB.Semimanufactures);
         cursor.close();
 
     }
@@ -80,7 +80,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Intent intent;
         switch (v.getId()) {
             case R.id.button:
-
                 Main2Activity.setRecipeList(db.allRecipes);
                 intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
@@ -95,7 +94,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                    // textView1.setText("Список пуст");
                     db.favoriteList = new ArrayList<Recipe>();
                 }
-                Main2Activity.setRecipeList(db.favoriteList);
+                Main2Activity.setRecipeList((ArrayList<Recipe>)db.favoriteList.clone());
                 intent = new Intent(this,Main2Activity.class);
                 //intent = new Intent(this,FavoriteActivity.class);
                 startActivity(intent);
